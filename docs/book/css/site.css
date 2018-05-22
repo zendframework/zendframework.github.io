@@ -7,3 +7,15 @@
   color: white;
   border-bottom: 0;
 }
+
+.component h4 {
+  color: #018D74;
+  font-size: 1.5em;
+}
+
+.package {
+  margin-top: -0.5em;
+  padding-top: 0;
+  font-size: 0.8em;
+  color: #666666;
+}
