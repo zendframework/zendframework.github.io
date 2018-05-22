@@ -1,14 +1,1 @@
-<div class="row jumbotron">
-  <h1>Zend Framework Components</h1>
-
-  <p>Documentation for the ZF components</p>
-</div>
-
-<div class="row panel panel-info">
-  <div class="panel-heading">Tutorials</div>
-
-  <div class="panel-body">
-    Learn Zend Framework and Expressive in-depth via our <a href="/tutorials">tutorials</a>.
-  </div>
-</div>
-
+<!-- placeholder -->
