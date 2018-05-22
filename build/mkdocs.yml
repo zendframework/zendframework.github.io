@@ -1,5 +1,5 @@
 docs_dir: markdown
-site_dir: .
+site_dir: html
 pages:
     - index.md
 site_name: ZF Docs
