@@ -3,19 +3,19 @@
 const TEMPLATE = <<< 'EOT'
 <div class="row">
   <h2>Components</h2>
-
-  %components%
 </div>
 
+<div class="components">
+  %components%
+</div>
 EOT;
 
 const PACKAGE_TEMPLATE = <<< 'EOT'
-  <div class="component col-xs-12 col-md-6">
+  <div class="component">
     <h4><a href="%href%">%name%</a></h4>
     <p class="package">%package%</p>
     <p>%description%</p>
   </div>
-
 EOT;
 
 $root      = realpath(getcwd());

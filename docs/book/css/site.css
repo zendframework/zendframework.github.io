@@ -8,9 +8,34 @@
   border-bottom: 0;
 }
 
+.components {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.component {
+  min-height: 200px;
+  flex-basis: 48%;
+  border: 1px solid #CCCCCC;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 .component h4 {
   color: #018D74;
   font-size: 1.5em;
+}
+
+.component h4 a {
+  color: #018D74;
 }
 
 .package {
