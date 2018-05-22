@@ -1,0 +1,9 @@
+.jumbotron {
+  background-color: #018D74;
+  color: white;
+}
+
+.content .jumbotron h1 {
+  color: white;
+  border-bottom: 0;
+}

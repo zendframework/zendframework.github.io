@@ -1,0 +1,10 @@
+docs_dir: markdown
+site_dir: .
+pages:
+    - index.md
+site_name: ZF Docs
+site_description: 'Documentation for the ZF components'
+repo_url: 'https://github.com/zendframework/zendframework.github.io'
+copyright: 'Copyright (c) 2015-2018 <a href="https://www.zend.com/">Zend Technologies USA Inc.</a>'
+extra_css:
+    - css/site.css
