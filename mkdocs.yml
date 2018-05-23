@@ -2,6 +2,7 @@ docs_dir: docs/book
 site_dir: docs/html
 pages:
     - index.md
+    - 404.md
 site_name: ZF Docs
 site_description: 'Documentation for the ZF components'
 repo_url: 'https://github.com/zendframework/zendframework.github.io'

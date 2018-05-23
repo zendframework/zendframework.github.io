@@ -23,7 +23,7 @@ zf-mkdoc-theme:
 	- git clone git://github.com/zendframework/zf-mkdoc-theme.git
 
 ready:
-	- rm -Rf css img index.html js search sitemap.xml docs/html
+	- rm -Rf css img index.html 404.html js search sitemap.xml docs/html
 	- mkdir -p docs/html
 
 zf-component-list.json:
@@ -35,6 +35,8 @@ docs/book/index.html:
 mkdocs: zf-mkdoc-theme zf-component-list.json docs/book/index.html
 	- ./zf-mkdoc-theme/build.sh
 	- cp -a docs/html/* .
+	- mv 404/index.html 404.html
+	- sed --in-place -r -e 's/\"\.\./"/g' 404.html
 	- rm index.html.dist
 
 build: ready mkdocs clean
@@ -43,3 +45,4 @@ clean:
 	- rm -Rf zf-mkdoc-theme
 	- rm zf-component-list.json
 	- rm docs/book/index.html
+	- rm -Rf 404
