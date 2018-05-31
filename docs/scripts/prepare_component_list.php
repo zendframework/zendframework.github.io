@@ -2,11 +2,12 @@
 
 const TEMPLATE = <<< 'EOT'
 <div class="row">
-  <h2>Components</h2>
-</div>
-
-<div class="components">
-  %components%
+    <div class="col-xs-12">
+        <h2>Components</h2>
+        <div class="components">
+            %components%
+        </div>
+    </div>
 </div>
 EOT;
 
