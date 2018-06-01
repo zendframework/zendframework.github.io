@@ -1,10 +1,7 @@
 <?php
 
 const TEMPLATE = <<< 'EOT'
-<div class="row">
-  <h2>Components</h2>
-</div>
-
+<h2>Components</h2>
 <div class="components">
   %components%
 </div>
