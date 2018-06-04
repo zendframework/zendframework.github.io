@@ -39,7 +39,7 @@ mkdocs: zf-mkdoc-theme zf-component-list.json docs/book/index.html
 	- sed --in-place -r -e 's/\"\.\./"/g' 404.html
 	- sed --in-place -r -e 's/href\=\"\"/href="\/"/g' 404.html
 	- sed --in-place -r -e 's/<a [^>]+>Not Found<\/a>//g' 404.html
-	- sed --in-place -r -e 's/<a [^>]+>404<\/a>//g' index.html
+	- sed --in-place -r -e 's/<a [^>]+>404\/?<\/a>//g' index.html
 	- rm index.html.dist
 
 build: ready mkdocs clean
