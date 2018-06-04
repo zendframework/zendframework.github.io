@@ -1,7 +1,8 @@
 <?php
 
 const TEMPLATE = <<< 'EOT'
-<h2>Components</h2>
+<h2>%group%</h2>
+
 <div class="components">
   %components%
 </div>
@@ -34,18 +35,66 @@ if (! is_readable($distPath)) {
 $json = file_get_contents($listFile);
 $packages = json_decode($json, true);
 
-$componentMarkup = [];
-foreach ($packages as $package) {
-    // @codingStandardsIgnoreStart
-    $componentMarkup []= str_replace(
-        [       '%href%',         '%name%',         '%package%',         '%description%'],
-        [$package['url'], $package['name'], $package['package'], $package['description']],
-        PACKAGE_TEMPLATE
-    );
-}
-$componentMarkup = implode("\n\n", $componentMarkup);
+// Group packages by type
+$packagesByType = [
+    'learn' => [
+        'title'    => 'Learn ZF',
+        'packages' => [],
+    ],
+    'mvc' => [
+        'title'    => 'MVC Framework',
+        'packages' => [],
+    ],
+    'middleware' => [
+        'title'    => 'Expressive and PSR-15 Middleware',
+        'packages' => [],
+    ],
+    'projects' => [
+        'title'    => 'Tooling and Composer Plugins',
+        'packages' => [],
+    ],
+    'components' => [
+        'title'    => 'Components',
+        'packages' => [],
+    ],
+];
 
-$markup = str_replace('%components%', $componentMarkup, TEMPLATE);
+$types = array_keys($packagesByType);
+
+// Sort packages into various groups, generating markup for each as we do.
+$packagesByType = array_reduce(
+    $packages,
+    function ($grouped, $package) use ($types) {
+        if (! isset($package['group']) || ! in_array($package['group'], $types, true)) {
+            $package['group'] = 'components';
+        }
+
+        $grouped[$package['group']]['packages'][] = str_replace(
+            [       '%href%',         '%name%',         '%package%',         '%description%'],
+            [$package['url'], $package['name'], $package['package'], $package['description']],
+            PACKAGE_TEMPLATE
+        );
+
+        return $grouped;
+    },
+    $packagesByType
+);
+
+// Generate per-group markup
+$markup = array_reduce(
+    $packagesByType,
+    function ($markup, $group) {
+        $markup []= str_replace(
+            [      '%group%',                      '%components%'],
+            [$group['title'], implode("\n\n", $group['packages'])],
+            TEMPLATE
+        );
+        return $markup;
+    },
+    []
+);
+
+$markup = implode("\n\n", $markup);
 
 copy($distPath, $indexPath);
 $fh = fopen($indexPath, 'a');

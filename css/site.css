@@ -8,18 +8,23 @@
   border-bottom: 0;
 }
 
-.components {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  align-content: flex-start;
+@media screen and (min-width: 768px) {
+  .components {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+
+  .component {
+    flex-basis: 48%;
+  }
 }
 
 .component {
   min-height: 200px;
-  flex-basis: 48%;
   border: 1px solid #CCCCCC;
   border-radius: 10px;
   margin-bottom: 1em;

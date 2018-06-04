@@ -39,10 +39,20 @@ mkdocs: zf-mkdoc-theme zf-component-list.json docs/book/index.html
 	- sed --in-place -r -e 's/\"\.\./"/g' 404.html
 	- sed --in-place -r -e 's/href\=\"\"/href="\/"/g' 404.html
 	- sed --in-place -r -e 's/<a [^>]+>Not Found<\/a>//g' 404.html
-	- sed --in-place -r -e 's/<a [^>]+>404<\/a>//g' index.html
+	- sed --in-place -r -e 's/<a [^>]+>404\/?<\/a>//g' index.html
 	- rm index.html.dist
 
 build: ready mkdocs clean
+	@echo "[DONE]"
+	@echo ""
+	@echo "Now run:"
+	@echo ""
+	@echo "    git add -A ."
+	@echo "    git commit"
+	@echo "    git push origin"
+	@echo ""
+	@echo "After running the 'make all' command, you might want to preview the"
+	@echo "results before committing, using 'php -S 0:8000 -t .'"
 
 clean:
 	- rm -Rf zf-mkdoc-theme
