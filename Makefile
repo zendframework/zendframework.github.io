@@ -33,7 +33,7 @@ docs/book/index.html:
 	- php docs/scripts/prepare_component_list.php
 
 mkdocs: zf-mkdoc-theme zf-component-list.json docs/book/index.html
-	- ./zf-mkdoc-theme/build.sh
+	- ./zf-mkdoc-theme/build.sh -u https://zendframework.github.io
 	- cp -a docs/html/* .
 	- mv 404/index.html 404.html
 	- sed --in-place -r -e 's/\"\.\./"/g' 404.html
