@@ -15,3 +15,5 @@ nav:
     - API: https://framework.zend.com/docs/api/zf1
 site_name: 'Zend Framework Documentation'
 site_description: 'Documentation for the MVC Framework, Expressive, and all Components'
+extra:
+  show_special_homepage: true
