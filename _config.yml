@@ -1,1 +1,1 @@
-exclude: ["docs/", "mkdocs.yml", "Makefile"]
+exclude: ["docs/", "mkdocs.yml", "Makefile", "asset/"]
