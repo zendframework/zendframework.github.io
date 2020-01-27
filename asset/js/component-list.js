@@ -190,7 +190,7 @@
     window.addEventListener('load', function () {
         const request = new XMLHttpRequest();
         request.onreadystatechange = parseComponentList;
-        request.open('GET', '//docs.zendframework.com/js/zf-component-list.json');
+        request.open('GET', '/js/zf-component-list.json');
         request.send();
     });
 })();

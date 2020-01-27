@@ -66,7 +66,13 @@ gulp.task('scripts', function () {
                 'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
                 'node_modules/anchor-js/anchor.js',
                 'node_modules/choices.js/public/assets/scripts/choices.js',
+                'node_modules/pnotify/dist/iife/PNotify.js',
+                'node_modules/pnotify/dist/iife/PNotifyAnimate.js',
+                'node_modules/pnotify/dist/iife/PNotifyButtons.js',
+                'node_modules/pnotify/dist/iife/PNotifyCallbacks.js',
+                'node_modules/pnotify/dist/iife/PNotifyCompat.js',
                 'js/component-list.js',
+                'js/legacy-notification.js',
                 'js/base.js'
             ]
         )
@@ -85,6 +91,7 @@ gulp.task('styles', function () {
         [
             'node_modules/prismjs/themes/prism-okaidia.css',
             'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css',
+            'sass/animate.css',
             'sass/styles.scss'
         ]
     )
