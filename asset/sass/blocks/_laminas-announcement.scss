@@ -1,5 +1,5 @@
 .laminas-announcement {
-    background-color: $header-footer-bg-color;
+    background-color: rgb(229, 0, 125);
     color: white;
     margin-bottom: $padding-large-vertical * 4;
     padding: $padding-large-vertical 0;
@@ -16,7 +16,7 @@
 
         &:hover,
         &:focus {
-            text-decoration: none;
+            text-decoration: underline;
         }
     }
 }
